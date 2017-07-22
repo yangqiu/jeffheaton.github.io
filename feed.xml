@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Heaton Research</title>
+  
+  <link href="/feed.xml" rel="self"/>
+  
+  <link href="http://www.heatonresearch.com/"/>
+  <updated>2017-07-22T18:59:36.982Z</updated>
+  <id>http://www.heatonresearch.com/</id>
+  
+  <author>
+    <name>Jeff Heaton</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Overview of Keras/TensorFlow Basic Operations</title>
+    <link href="http://www.heatonresearch.com/2017/07/22/keras-getting-started.html"/>
+    <id>http://www.heatonresearch.com/2017/07/22/keras-getting-started.html</id>
+    <published>2017-07-22T18:00:00.000Z</published>
+    <updated>2017-07-22T18:59:36.982Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I in the process of updating my deep learning &lt;a href=&quot;https://sites.wustl.edu/jeffheaton/t81-558/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;course
+    
+    </summary>
+    
+      <category term="ai" scheme="http://www.heatonresearch.com/categories/ai/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>My Current Software Toolkit</title>
+    <link href="http://www.heatonresearch.com/2017/07/13/jeffheaton-toolset.html.html"/>
+    <id>http://www.heatonresearch.com/2017/07/13/jeffheaton-toolset.html.html</id>
+    <published>2017-07-13T18:00:00.000Z</published>
+    <updated>2017-07-14T12:11:22.603Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;In this post I will summarize some of the computer programming technologies that I make use of.  I am a data scientist with a computer sc
+    
+    </summary>
+    
+      <category term="datascience" scheme="http://www.heatonresearch.com/categories/datascience/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Distance Computer Science PhD at Nova Southeastern University</title>
+    <link href="http://www.heatonresearch.com/2017/07/05/finished-nsu-phd.html"/>
+    <id>http://www.heatonresearch.com/2017/07/05/finished-nsu-phd.html</id>
+    <published>2017-07-05T18:00:00.000Z</published>
+    <updated>2017-07-12T02:41:16.473Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This blog post describes the process that I went through to obtain a PhD in computer science.  I did this through a non-traditional route
+    
+    </summary>
+    
+      <category term="phd" scheme="http://www.heatonresearch.com/categories/phd/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Presented at International Joint Conference on Neural Networks (IJCNN 2017)</title>
+    <link href="http://www.heatonresearch.com/2017/05/25/ijcnn_2017.html"/>
+    <id>http://www.heatonresearch.com/2017/05/25/ijcnn_2017.html</id>
+    <published>2017-05-25T18:00:00.000Z</published>
+    <updated>2017-07-14T01:57:33.818Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I had a &lt;a href=&quot;http://ieeexplore.ieee.org/abstract/document/7966442/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;paper&lt;/a&gt; accepted for the Interna
+    
+    </summary>
+    
+      <category term="phd" scheme="http://www.heatonresearch.com/categories/phd/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Reading Wikipedia XML Dumps with Python</title>
+    <link href="http://www.heatonresearch.com/2017/03/03/python-basic-wikipedia-parsing.html"/>
+    <id>http://www.heatonresearch.com/2017/03/03/python-basic-wikipedia-parsing.html</id>
+    <published>2017-03-03T19:00:00.000Z</published>
+    <updated>2017-07-14T12:05:47.335Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Wikipedia contains a vast amount of data.  It is possible to make use of this data in computer programs for a variety of purposes.  Howev
+    
+    </summary>
+    
+      <category term="python" scheme="http://www.heatonresearch.com/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Using TensorFlow in Windows with a GPU</title>
+    <link href="http://www.heatonresearch.com/2017/01/01/tensorflow-windows-gpu.html"/>
+    <id>http://www.heatonresearch.com/2017/01/01/tensorflow-windows-gpu.html</id>
+    <published>2017-01-01T19:00:00.000Z</published>
+    <updated>2017-07-14T12:06:43.780Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;In case you missed it, &lt;a href=&quot;https://www.tensorflow.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;TensorFlow&lt;/a&gt; is now &lt;a href=&quot;https://develo
+    
+    </summary>
+    
+      <category term="gpu" scheme="http://www.heatonresearch.com/categories/gpu/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Creating a VMWare Tensorflow VM for my Deep Learning Class</title>
+    <link href="http://www.heatonresearch.com/2016/09/10/ubuntu-tensorflow.html"/>
+    <id>http://www.heatonresearch.com/2016/09/10/ubuntu-tensorflow.html</id>
+    <published>2016-09-10T18:00:00.000Z</published>
+    <updated>2017-07-14T12:10:18.008Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;There have been updates to this since the first version to support later versions of TensorFlow&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This post describ
+    
+    </summary>
+    
+      <category term="tensorflow" scheme="http://www.heatonresearch.com/categories/tensorflow/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Presented Two Papers at IEEE SoutheastCON 2016 in Norfolk, VA</title>
+    <link href="http://www.heatonresearch.com/2016/03/19/ieee-southeast-con-2016-papers.html"/>
+    <id>http://www.heatonresearch.com/2016/03/19/ieee-southeast-con-2016-papers.html</id>
+    <published>2016-03-19T18:00:00.000Z</published>
+    <updated>2017-07-14T12:04:40.172Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I presented two papers at the IEEE SoutheastCON 2016 conference in NorfolkVA on&lt;br&gt;April 1, 2016:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;April, 2016: &lt;a href=&quot;http
+    
+    </summary>
+    
+      <category term="phd" scheme="http://www.heatonresearch.com/categories/phd/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Teaching a Deep Learning Graduate Course at Washington University</title>
+    <link href="http://www.heatonresearch.com/2016/02/24/teaching-deep-learning-washington-university.html"/>
+    <id>http://www.heatonresearch.com/2016/02/24/teaching-deep-learning-washington-university.html</id>
+    <published>2016-02-24T19:00:00.000Z</published>
+    <updated>2017-07-14T12:10:16.838Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I will be teaching a graduate course at &lt;a href=&quot;https://engineering.wustl.edu/Pages/home.aspx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Washington
+    
+    </summary>
+    
+      <category term="tensorflow" scheme="http://www.heatonresearch.com/categories/tensorflow/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>My Experience with the Coursera Johns Hopkins Data Science Certification</title>
+    <link href="http://www.heatonresearch.com/2015/09/26/coursera-johns-hopkins-data-science.html"/>
+    <id>http://www.heatonresearch.com/2015/09/26/coursera-johns-hopkins-data-science.html</id>
+    <published>2015-09-26T19:26:00.000Z</published>
+    <updated>2017-07-14T12:03:51.403Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This post is a summary of several posts that I had on my old blog about the &lt;a href=&quot;https://www.coursera.org/specializations/jhudatascie
+    
+    </summary>
+    
+      <category term="datascience" scheme="http://www.heatonresearch.com/categories/datascience/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Visiting Spain and the GECCO Confrence</title>
+    <link href="http://www.heatonresearch.com/2015/08/30/madrid-gecco.html"/>
+    <id>http://www.heatonresearch.com/2015/08/30/madrid-gecco.html</id>
+    <published>2015-08-30T19:26:00.000Z</published>
+    <updated>2017-07-01T03:28:38.981Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I spent six weeks in Spain this summer.  My wife, Tracy, is earning a &lt;a href=&quot;http://www.slu.edu/department-of-languages-literatures-and
+    
+    </summary>
+    
+      <category term="phd" scheme="http://www.heatonresearch.com/categories/phd/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>My First Kaggle Competition</title>
+    <link href="http://www.heatonresearch.com/2015/05/25/first-kaggle.html"/>
+    <id>http://www.heatonresearch.com/2015/05/25/first-kaggle.html</id>
+    <published>2015-05-25T19:26:00.000Z</published>
+    <updated>2017-07-14T12:04:21.541Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I placed in the top 10% of my first Kaggle competition.  If you are not familiar with it,&lt;br&gt;&lt;a href=&quot;https://www.kaggle.com/&quot; target=&quot;_b
+    
+    </summary>
+    
+      <category term="kaggle" scheme="http://www.heatonresearch.com/categories/kaggle/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Quick R Tutorial: The Big-O Chart</title>
+    <link href="http://www.heatonresearch.com/2015/03/21/r_big_o.html"/>
+    <id>http://www.heatonresearch.com/2015/03/21/r_big_o.html</id>
+    <published>2015-03-21T19:26:00.000Z</published>
+    <updated>2017-07-14T12:05:59.722Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I needed an original &lt;a href=&quot;http://en.wikipedia.org/wiki/Big_O_notation&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Big-O&lt;/a&gt; chart for a publicati
+    
+    </summary>
+    
+      <category term="r" scheme="http://www.heatonresearch.com/categories/r/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Using Encog to Replicate Research</title>
+    <link href="http://www.heatonresearch.com/2015/03/12/encog-replicate-research.html"/>
+    <id>http://www.heatonresearch.com/2015/03/12/encog-replicate-research.html</id>
+    <published>2015-03-12T19:26:00.000Z</published>
+    <updated>2017-07-14T12:04:02.831Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;For the one of my PhD courses at &lt;a href=&quot;http://cec.nova.edu/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Nova Southeastern University (NSU)&lt;/a&gt; it 
+    
+    </summary>
+    
+      <category term="encog" scheme="http://www.heatonresearch.com/categories/encog/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>How I Got Into Data Science from IT Programming</title>
+    <link href="http://www.heatonresearch.com/2015/03/11/data-science-from-it.html"/>
+    <id>http://www.heatonresearch.com/2015/03/11/data-science-from-it.html</id>
+    <published>2015-03-11T19:26:00.000Z</published>
+    <updated>2017-07-01T14:40:49.814Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Drew Conway describes data scientist as the combination of domain expertise, statistics&lt;br&gt;and hacker skills.  If you are an IT programme
+    
+    </summary>
+    
+      <category term="datascience" scheme="http://www.heatonresearch.com/categories/datascience/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>PhD Update: Second Cluster Visit for Winter 2015 Semester at NSU</title>
+    <link href="http://www.heatonresearch.com/2015/03/09/phd-2nd-cluster-visit.html"/>
+    <id>http://www.heatonresearch.com/2015/03/09/phd-2nd-cluster-visit.html</id>
+    <published>2015-03-09T19:26:00.000Z</published>
+    <updated>2017-07-01T03:28:38.975Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I just got back to St. Louis from my second cluster visit to NSU for the phd in computer&lt;br&gt;science.  I was feeling pretty good about cho
+    
+    </summary>
+    
+      <category term="phd" scheme="http://www.heatonresearch.com/categories/phd/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Quick and Very Dirty Data Wrangling Example</title>
+    <link href="http://www.heatonresearch.com/2014/12/27/quick-dirty-data-wrangling.html"/>
+    <id>http://www.heatonresearch.com/2014/12/27/quick-dirty-data-wrangling.html</id>
+    <published>2014-12-27T20:26:00.000Z</published>
+    <updated>2017-07-01T14:38:53.150Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Data science is often described as the intersection of statistics, domain knowledge and&lt;br&gt;hacking skills.  One important part of hacking
+    
+    </summary>
+    
+      <category term="datascience" scheme="http://www.heatonresearch.com/categories/datascience/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>First time at the NSU Campus - Fall 2014</title>
+    <link href="http://www.heatonresearch.com/2014/09/02/first-visit-nsu.html"/>
+    <id>http://www.heatonresearch.com/2014/09/02/first-visit-nsu.html</id>
+    <published>2014-09-02T19:26:00.000Z</published>
+    <updated>2017-07-01T03:28:38.973Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I just returned from my first cluster meeting for PhD program in computer science at Nova&lt;br&gt;Southeastern University.  Because it was Lab
+    
+    </summary>
+    
+      <category term="phd" scheme="http://www.heatonresearch.com/categories/phd/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Washington University Mini Medical School</title>
+    <link href="http://www.heatonresearch.com/2014/05/20/washington-university-mini-medical-school.html"/>
+    <id>http://www.heatonresearch.com/2014/05/20/washington-university-mini-medical-school.html</id>
+    <published>2014-05-20T19:26:00.000Z</published>
+    <updated>2017-07-01T03:28:38.972Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;My wife and I just finished the &lt;a href=&quot;https://minimed.wustl.edu/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mini-Med series&lt;/a&gt; at &lt;a href=&quot;http:
+    
+    </summary>
+    
+      <category term="learning" scheme="http://www.heatonresearch.com/categories/learning/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>I am Starting a Ph.D. in Computer Science</title>
+    <link href="http://www.heatonresearch.com/2014/05/02/starting-computer-science-phd.html"/>
+    <id>http://www.heatonresearch.com/2014/05/02/starting-computer-science-phd.html</id>
+    <published>2014-05-02T19:26:00.000Z</published>
+    <updated>2017-07-14T12:06:12.049Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I am starting a Ph.D. in &lt;a href=&quot;http://cec.nova.edu/doctoral/cisd/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Computer Science&lt;/a&gt; at &lt;a
+    
+    </summary>
+    
+      <category term="phd" scheme="http://www.heatonresearch.com/categories/phd/"/>
+    
+    
+  </entry>
+  
+</feed>
