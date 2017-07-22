@@ -14,8 +14,13 @@ $("#sendMessage").click("click", function() {
       return
     }
 
+    var url = "//formspree.io/"
+    url+="jtheaton"
+    url+='@'
+    url+="wustl.edu"
+
     $.ajax({
-      url: "//formspree.io/jtheaton@wustl.edu",
+      url: url,
       method: "POST",
       data: {name: name, email: email, message: message, _subject: subject, _replyto: email},
       dataType: "json"
