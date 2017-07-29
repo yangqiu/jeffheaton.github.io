@@ -5,16 +5,16 @@
   
   <title>AIFH Volume 1, Chapter 3: Optical Character Recognition Lab | Heaton Research</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="OCR Lab 		 		     Browser not supported. 	 	  	 	Browser not supported. 	             &quot;use strict&quot;;	 if(window.addEventListener) { window.addEventListener(&apos;load&apos;, function () {  	var DOWNSAMPLE_WIDTH">
+  <meta name="description" content="OCR Lab  		     Browser not supported. 	    	Browser not supported.            &quot;use strict&quot;; if(window.addEventListener) { window.addEventListener(&apos;load&apos;, function () {  	var DOWNSAMPLE_WIDTH = 5; 	va">
 <meta property="og:type" content="website">
 <meta property="og:title" content="AIFH Volume 1, Chapter 3: Optical Character Recognition Lab">
 <meta property="og:url" content="http://www.heatonresearch.com/aifh/vol1/ocr.html">
 <meta property="og:site_name" content="Heaton Research">
-<meta property="og:description" content="OCR Lab 		 		     Browser not supported. 	 	  	 	Browser not supported. 	             &quot;use strict&quot;;	 if(window.addEventListener) { window.addEventListener(&apos;load&apos;, function () {  	var DOWNSAMPLE_WIDTH">
-<meta property="og:updated_time" content="2017-07-01T03:28:39.035Z">
+<meta property="og:description" content="OCR Lab  		     Browser not supported. 	    	Browser not supported.            &quot;use strict&quot;; if(window.addEventListener) { window.addEventListener(&apos;load&apos;, function () {  	var DOWNSAMPLE_WIDTH = 5; 	va">
+<meta property="og:updated_time" content="2017-07-28T22:27:02.948Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AIFH Volume 1, Chapter 3: Optical Character Recognition Lab">
-<meta name="twitter:description" content="OCR Lab 		 		     Browser not supported. 	 	  	 	Browser not supported. 	             &quot;use strict&quot;;	 if(window.addEventListener) { window.addEventListener(&apos;load&apos;, function () {  	var DOWNSAMPLE_WIDTH">
+<meta name="twitter:description" content="OCR Lab  		     Browser not supported. 	    	Browser not supported.            &quot;use strict&quot;; if(window.addEventListener) { window.addEventListener(&apos;load&apos;, function () {  	var DOWNSAMPLE_WIDTH = 5; 	va">
 <meta name="twitter:creator" content="@jeffheaton">
   
     <link rel="alternate" href="/atom.xml" title="Heaton Research" type="application/atom+xml">
@@ -128,18 +128,18 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <h1>OCR Lab
-		
+
 		<div id="example-holder">
     <canvas id="drawing-area" width="300" height="300">Browser not supported.</canvas>
 	<select id="lstLetters" size="10"></select>
-	
+
 <div id="example-btn1"><input id="btnRecognize" type="button" value="Recognize"><input id="btnTeach" type="button" value="Teach"><input id="btnClear" type="button" value="Clear"><input id="btnDownsample" type="button" value="Down Sample"><input id="btnRemove" type="button" value="Remove"></div>
-	
+
 	<canvas id="downsampleView" width="110" height="120">Browser not supported.</canvas>
-	  
+
     </div>
     <script type="text/javascript">
-"use strict";	
+"use strict";
 if(window.addEventListener) {
 window.addEventListener('load', function () {
 
@@ -158,10 +158,10 @@ window.addEventListener('load', function () {
 
     drawingContext = canvas.getContext('2d');
 	downsampleContext = downsampleView.getContext('2d');
-	
+
     // Pencil tool instance.
     tool = new tool_pencil();
-	
+
 
     // Attach the mousedown, mousemove and mouseup event listeners.
     canvas.addEventListener('mousedown', ev_canvas, true);
@@ -170,67 +170,67 @@ window.addEventListener('load', function () {
     canvas.addEventListener('touchstart',   ev_canvas, true);
     canvas.addEventListener('touchend',   ev_canvas, true);
     canvas.addEventListener('touchmove',   ev_canvas, true);
-	canvas.addEventListener('mouseout',   ev_canvas, true);	
+	canvas.addEventListener('mouseout',   ev_canvas, true);
 	lstLetters.addEventListener('change', ev_selectList, true);
-	
+
 	var btnClear = document.getElementById('btnClear');
 	var btnDownsample = document.getElementById('btnDownsample');
-	var btnRecognize = document.getElementById('btnRecognize'); 
+	var btnRecognize = document.getElementById('btnRecognize');
 	var btnTeach = document.getElementById('btnTeach');
 	var btnRemove = document.getElementById('btnRemove');
-	
-	btnClear.addEventListener('click', ev_clear, false);	
-	btnDownsample.addEventListener('click', ev_downSample, false);	
+
+	btnClear.addEventListener('click', ev_clear, false);
+	btnDownsample.addEventListener('click', ev_downSample, false);
 	btnRecognize.addEventListener('click', ev_recognize, false);
 	btnTeach.addEventListener('click', ev_teach, false);
 	btnRemove.addEventListener('click', ev_remove, false);
-	
+
 	clearDownSample();
-	
+
 	preload();
   }
-  
+
   /////////////////////////////////////////////////////////////////////////////
   // Event functions
   /////////////////////////////////////////////////////////////////////////////
-  
+
   // Handle events to the canvas.  This allows drawing to occur.
-  function ev_canvas (ev) 
+  function ev_canvas (ev)
   {
 	// Firefox
-	if (ev.layerX || ev.layerX == 0) 
-	{ 
+	if (ev.layerX || ev.layerX == 0)
+	{
 		ev._x = ev.layerX;
 		ev._y = ev.layerY;
-	} 
+	}
 	// Opera
-	else if (ev.offsetX || ev.offsetX == 0) 
-	{ 
+	else if (ev.offsetX || ev.offsetX == 0)
+	{
 		ev._x = ev.offsetX;
 		ev._y = ev.offsetY;
 	}
 
 	// Call the event handler of the tool.
 	var func = tool[ev.type];
-	if (func) 
+	if (func)
 	{
 		func(ev);
 	}
   }
-  
+
   // Called when the "Teach" button is clicked.
   function ev_teach(ev)
   {
 		var data = performDownSample();
-		
-		if( data == null ) 
+
+		if( data == null )
 		{
 			alert("You must draw something first.");
 		}
 		else
 		{
 			var charEntered = prompt("What did you just draw?", "");
-			
+
 			if( charEntered )
 			{
 				if( charEntered in charData )
@@ -241,18 +241,18 @@ window.addEventListener('load', function () {
 				{
 					alert("Please enter exactly one character.");
 				}
-				else 
+				else
 				{
-					canvas.width = canvas.width;	
+					canvas.width = canvas.width;
 					performDownSample();
 					charData[charEntered] = data;
 					lstLetters.add(new Option(charEntered));
 					clearDownSample();
 				}
 			}
-		}  
+		}
   }
-  
+
   // Called when the "Remove" button is clicked.
   function ev_remove(ev)
   {
@@ -263,37 +263,37 @@ window.addEventListener('load', function () {
 	}
 	clearDownSample();
   }
-  
+
   // Called when the "Downsample" button is clicked
   function ev_downSample(ev)
   {
 	performDownSample();
   }
-  
+
   // Called when the "Clear" button is clicked
   function ev_clear(ev)
   {
-	canvas.width = canvas.width;	
+	canvas.width = canvas.width;
 	clearDownSample();
   }
-  
+
   // Called when the selected letter changes
-  function ev_selectList (ev) 
+  function ev_selectList (ev)
   {
 	var c = lstLetters.options[lstLetters.selectedIndex].text;
 	displaySample(charData[c]);
   }
-  
+
   // Called when the "Recognize" button is clicked
   function ev_recognize (ev)
   {
   	var drawnChar = performDownSample();
-	
-	if( lstLetters.length<1 ) 
+
+	if( lstLetters.length<1 )
 	{
 		alert("Please teach me something first.");
 	}
-	else if( drawnChar == null ) 
+	else if( drawnChar == null )
 	{
 		alert("You must draw something to recognize.");
 	}
@@ -301,50 +301,50 @@ window.addEventListener('load', function () {
 	{
 		var bestChar = '??';
 		var bestScore = 0;
-		
+
 		for(var c in charData )
 		{
 			var data = charData[c];
-		
+
 // Now we will actually recognize the letter drawn.
 // To do this, we will use a Euclidean distance
 // http://www.heatonresearch.com/wiki/Euclidean_Distance
-		
+
 			var sum = 0;
 			for(var i = 0; i<data.length; i++ )
 			{
 				var delta = data[i] - drawnChar[i];
 				sum = sum + (delta*delta);
 			}
-			
+
 			sum = Math.sqrt(sum);
-			
+
 // Basically we are calculating the Euclidean distance between
 // what was just drawn, and each of the samples we taught
-// the program.  The smallest Euclidean distance is the char.			
-						
+// the program.  The smallest Euclidean distance is the char.
+
 			if( sum<bestScore || bestChar=='??' )
 			{
 				bestScore = sum;
 				bestChar = c;
 			}
-			
+
 		}
-	
+
 		alert('I believe you typed: ' + bestChar );
 	}
-	
-	canvas.width = canvas.width;	
+
+	canvas.width = canvas.width;
 	clearDownSample();
-  }  
-  
+  }
+
   /////////////////////////////////////////////////////////////////////////////
   // Downsampling functions
-  /////////////////////////////////////////////////////////////////////////////  
+  /////////////////////////////////////////////////////////////////////////////
 
   // Preload the digits, so that the user can quickly do some OCR if desired.
   function preload()
-  {	
+  {
 	defineChar("0", new Array( -1,1,1,1,-1,1,1,-1,1,1,1,-1,-1,-1,1,1,-1,-1,-1,1,1,-1,-1,-1,1,1,-1,-1,-1,1,1,1,-1,-1,1,-1,1,1,1,-1 ) );
 	defineChar("1", new Array( 1,1,1,-1,-1,1,1,1,-1,-1,1,1,1,-1,-1,1,1,1,1,-1,-1,1,1,1,1,-1,-1,-1,1,1,-1,-1,-1,1,1,-1,1,1,1,1) );
 	defineChar("2", new Array(1,1,1,-1,-1,-1,-1,1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,1,-1,1,1,1,1,-1,1,-1,1,1,-1,1,1,1,1,1) );
@@ -356,205 +356,205 @@ window.addEventListener('load', function () {
 	defineChar("8", new Array(1,1,1,1,1,1,-1,-1,-1,1,1,-1,-1,-1,1,1,1,1,1,1,-1,1,1,1,1,1,1,-1,-1,1,1,-1,-1,-1,1,1,1,1,1,1) );
 	defineChar("9", new Array(1,1,1,1,1,1,1,-1,-1,1,1,-1,-1,-1,1,1,1,1,1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,1) );
   }
-  
+
   // Define a character, add it to the list and to the map.
   function defineChar(charEntered,data)
-  {	
+  {
   	charData[charEntered] = data;
 	lstLetters.add(new Option(charEntered));
   }
-  
+
   // Determine if the specificed horizontal line is clear.
   // This is used to find the top and bottom cropping lines.
   function isHLineClear(row)
   {
 	var imgd = drawingContext.getImageData(0, row, canvas.width, 1);
 	var pix = imgd.data;
-	
+
 	for(var i = 0; i<pix.length; i++)
 	{
-		if( pix[i]>0 ) 
+		if( pix[i]>0 )
 		{
-			return false; 
+			return false;
 		}
 	}
-	
+
 	return true;
   }
-  
+
   // Determine if the specificed vertical line is clear.
   // This is used to find the left and right cropping lines.
   function isVLineClear(col)
   {
 	var imgd = drawingContext.getImageData(col, 0, 1, canvas.height);
 	var pix = imgd.data;
-	
+
 	for(var i = 0; i<pix.length; i++)
 	{
-		if( pix[i]>0 ) 
+		if( pix[i]>0 )
 		{
-			return false; 
+			return false;
 		}
 	}
-	
+
 	return true;
-  } 
-  
+  }
+
   // Downsample the drawing area.
-  function performDownSample() 
+  function performDownSample()
   {
 	// first find a bounding rectangle so that we can crop out unused space
 	var top = 0;
-	
+
 	while( isHLineClear(top) && top<canvas.height )
 	{
 		top++;
 	}
-	
+
 	var bottom = canvas.height;
-	
+
 	while( isHLineClear(bottom) && bottom>0 )
 	{
 		bottom--;
 	}
-	
+
 	var left = 0;
-	
+
 	while( isVLineClear(left) && left<canvas.width )
 	{
 		left++;
 	}
-	
+
 	var right = canvas.width;
-	
+
 	while( isVLineClear(right) && right>0 )
 	{
 		right--;
 	}
-	
+
 	if( bottom<top )
 	{
 		return null;
 	}
 	//uncomment this if you want to see the cropping rectangle
-	//drawingContext.strokeRect(left,top,right-left,bottom-top); 
-  
+	//drawingContext.strokeRect(left,top,right-left,bottom-top);
+
 	// now downsample
-	
+
 	var cellWidth = (right-left) / DOWNSAMPLE_WIDTH;
 	var cellHeight = (bottom-top) / DOWNSAMPLE_HEIGHT;
 	var result = new Array();
 	var resultIndex = 0;
-	
+
 	// to downsample we are going to lay a "grid" over the drawing
 	// the grid's dimensions are defined by DOWNSAMPLE_HEIGHT and
-	// DOWNSAMPLE_WIDTH.  Typically 5x8.  If even one pixel is 
+	// DOWNSAMPLE_WIDTH.  Typically 5x8.  If even one pixel is
 	// present in a grid square, it is downsampled to "black".
-	
+
 	for(var row = 0; row<DOWNSAMPLE_HEIGHT; row++)
 	{
 		for(var col = 0; col<DOWNSAMPLE_WIDTH; col++)
 		{
 			var x = (cellWidth * col)+left;
 			var y = (cellHeight * row)+top;
-			
+
 			// obtain pixel data for the grid square
 			var imgd = drawingContext.getImageData(x, y, cellWidth, cellHeight);
 			var pix = imgd.data;
-			
+
 			var d = false;
 			// see if at least one pixel is "black"
 			for(var i = 0; i<pix.length; i++)
 			{
-				if( pix[i]>0 ) 
+				if( pix[i]>0 )
 				{
 					d = true;
 					break;
 				}
 			}
-			
+
 			// we are downsampling to an array where 1.0 is black, and -1.0 is white.
 			// this will be used for Euclidean distance measuring.
-			if( d ) 
+			if( d )
 			{
 				result[resultIndex++] = 1.0;
-			} else 
+			} else
 			{
 				result[resultIndex++] = -1.0;
 			}
 		}
 	}
-	
+
 	displaySample(result);
-	return result;  
+	return result;
   }
-  
+
   // Clear the downsample area to just a blank grid.
-  function clearDownSample() 
+  function clearDownSample()
   {
 	downsampleContext.fillStyle = 'white';
 	var pixW = downsampleView.width / DOWNSAMPLE_WIDTH;
 	var pixH = downsampleView.height / DOWNSAMPLE_HEIGHT;
-	
+
   	for(var row = 0; row<DOWNSAMPLE_HEIGHT; row++)
 	{
 		for(var col = 0; col<DOWNSAMPLE_WIDTH; col++)
-		{	
-			downsampleContext.fillRect(col*pixW,row*pixH,pixW,pixH);		
-			downsampleContext.strokeRect(col*pixW,row*pixH,pixW,pixW);			
+		{
+			downsampleContext.fillRect(col*pixW,row*pixH,pixW,pixH);
+			downsampleContext.strokeRect(col*pixW,row*pixH,pixW,pixW);
 		}
-	}  
+	}
   }
-  
+
   // Display downsampled data to the grid.
   function displaySample(data)
   {
 	var dataIndex = 0;
 	var pixW = downsampleView.width / DOWNSAMPLE_WIDTH;
 	var pixH = downsampleView.height / DOWNSAMPLE_HEIGHT;
-	
+
 	for(var row = 0; row<DOWNSAMPLE_HEIGHT; row++)
 	{
 		for(var col = 0; col<DOWNSAMPLE_WIDTH; col++)
-		{			
+		{
 			var d = data[dataIndex++];
 			if(Math.abs(d-1.0)<0.0001 ) {
 				downsampleContext.fillStyle = 'black';
 			} else {
 				downsampleContext.fillStyle = 'white';
 			}
-			downsampleContext.fillRect(col*pixW,row*pixH,pixW,pixH);		
+			downsampleContext.fillRect(col*pixW,row*pixH,pixW,pixH);
 			downsampleContext.strokeRect(col*pixW,row*pixH,pixW,pixW);
 		}
-	}  
+	}
   }
-  
+
   /////////////////////////////////////////////////////////////////////////////
   // Drawing functions
   /////////////////////////////////////////////////////////////////////////////
 
-  // This painting tool works like a drawing pencil which tracks the mouse 
+  // This painting tool works like a drawing pencil which tracks the mouse
   // movements.
-function tool_pencil () 
+function tool_pencil ()
 {
     var tool = this;
     this.started = false;
 
 // This is called when you start holding down the mouse button.
 // This starts the pencil drawing.
-this.mousedown = function (ev) 
+this.mousedown = function (ev)
 {
   drawingContext.beginPath();
   drawingContext.moveTo(ev._x, ev._y);
   tool.started = true;
 };
 
-// This function is called every time you move the mouse. Obviously, it only 
-// draws if the tool.started state is set to true (when you are holding down 
+// This function is called every time you move the mouse. Obviously, it only
+// draws if the tool.started state is set to true (when you are holding down
 // the mouse button).
-this.mousemove = function (ev) 
+this.mousemove = function (ev)
 {
-  if (tool.started) 
+  if (tool.started)
   {
     drawingContext.lineTo(ev._x, ev._y);
     drawingContext.stroke();
@@ -562,42 +562,42 @@ this.mousemove = function (ev)
 };
 
 // This is called when you release the mouse button.
-this.mouseup = function (ev) 
+this.mouseup = function (ev)
 {
-  if (tool.started) 
+  if (tool.started)
   {
     tool.mousemove(ev);
     tool.started = false;
   }
 };
-	
-this.mouseout = function(ev) 
+
+this.mouseout = function(ev)
 {
-  if (tool.started) 
+  if (tool.started)
   {
     tool.mousemove(ev);
     tool.started = false;
   }
 }
 
-this.touchstart = function(ev) 
+this.touchstart = function(ev)
 {
   drawingContext.beginPath();
   drawingContext.moveTo(ev._x, ev._y);
   tool.started = true;
 }
 
-this.touchend = function(ev) 
+this.touchend = function(ev)
 {
-  if (tool.started) 
+  if (tool.started)
   {
     tool.started = false;
   }
 }
 
-this.touchmove = function(ev) 
+this.touchmove = function(ev)
 {
-  if (tool.started) 
+  if (tool.started)
   {
     drawingContext.lineTo(ev._x, ev._y);
     drawingContext.stroke();
@@ -606,7 +606,7 @@ this.touchmove = function(ev)
 };
 
   }
-  
+
   // cause the init function to be called.
   init();
 
@@ -622,7 +622,7 @@ this.touchmove = function(ev)
     
 
     <footer class="article-footer">
-      <a data-url="http://www.heatonresearch.com/aifh/vol1/ocr.html" data-id="cj5fprijy003dd0vkxnm3mvpi" class="article-share-link">
+      <a data-url="http://www.heatonresearch.com/aifh/vol1/ocr.html" data-id="cj5pff5f7003hn8vk3eqv6a6q" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

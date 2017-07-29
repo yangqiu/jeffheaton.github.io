@@ -3,7 +3,7 @@ $(document).ready(function(){
   		var classCount = parseInt($("#classCount").val());
   		var normalizedHigh = parseFloat($("#normalizedHigh").val());
   		var normalizedLow = parseFloat($("#normalizedLow").val());
-  		
+
     	// write out the one-of-n encoding
     	var tableStr = "<table><thead><tr><th>Class</th>";
     	for(var col=0;col<classCount;col++) {
@@ -29,16 +29,16 @@ $(document).ready(function(){
     	}
     	tableStr+="</tbody></table>";
     	$("#oneofnOutput").html(tableStr);
-    	
+
     	// write out the equilateral encoding
     	var r = 0.0;
     	var f = 0.0;
         var result = new Array(classCount);
-        
+
         for(var i=0;i<classCount;i++) {
         	result[i] = new Array(classCount-1);
         }
-        
+
         result[0][0] = -1;
         result[1][0] = 1;
 
@@ -62,32 +62,32 @@ $(document).ready(function(){
             }
             result[k][k - 1] = 1.0;
         }
-        
+
         // scale it
         var dataLow = -1;
         var dataHigh = 1;
-        
+
         for (var row = 0; row < k; row++) {
             for (var col = 0; col < k; col++) {
-                result[row][col] = ((result[row][col] - dataLow) 
+                result[row][col] = ((result[row][col] - dataLow)
 				/ (dataHigh - dataLow))
 				* (normalizedHigh - normalizedLow) + normalizedLow;
             }
         }
-    	
+
     	tableStr = "<table><thead><tr><th>Class</th>";
     	for(var col=0;col<(classCount-1);col++) {
 			tableStr+="<th>";
-    		tableStr+="Output " + col;
+    		tableStr+="Output " + col + "&nbsp;"
     		tableStr+="</th>";
     	}
     	tableStr+="</tr></thead><tbody>";
     	for(var row=0; row<classCount; row++) {
-    		tableStr+="<tr><td>Class #" + (row+1);
+    		tableStr+="<tr><td>Class #" + (row+1) + ":&nbsp;";
     		tableStr+="</td>";
     		for(var col=0;col<(classCount-1);col++) {
     			tableStr+="<td>";
-    			tableStr+=result[row][col];
+    			tableStr+=result[row][col].toFixed(2);
     			tableStr+="</td>";
     		}
     		tableStr+="</tr>";
@@ -96,4 +96,3 @@ $(document).ready(function(){
     	$("#equilateralOutput").html(tableStr);
   });
 });
-

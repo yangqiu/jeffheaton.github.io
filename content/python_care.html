@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://www.heatonresearch.com/content/python_care.html">
 <meta property="og:site_name" content="Heaton Research">
 <meta property="og:description" content="EnvironmentsList your environments:1conda env list Select an environment (Linux, OS X):1source activate tensorflow Select an environment (Windows):1activate tensorflow Deactivate Environment (Linux, O">
-<meta property="og:updated_time" content="2017-07-11T16:19:41.625Z">
+<meta property="og:updated_time" content="2017-07-26T22:42:13.595Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Care and Feeding of a Python Environment">
 <meta name="twitter:description" content="EnvironmentsList your environments:1conda env list Select an environment (Linux, OS X):1source activate tensorflow Select an environment (Windows):1activate tensorflow Deactivate Environment (Linux, O">
@@ -124,18 +124,21 @@ ga('send', 'pageview');
 <p>Select an environment (Windows):<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">activate tensorflow</div></pre></td></tr></table></figure></p>
 <p>Deactivate Environment (Linux, OS X)<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source deactivate</div></pre></td></tr></table></figure></p>
 <p>Deactivate Environment (Windows, Linux, OS X)<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">deactivate</div></pre></td></tr></table></figure></p>
-<h1 id="Create-Environment"><a href="#Create-Environment" class="headerlink" title="Create Environment"></a>Create Environment</h1><p>Create an environment:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">conda create --name tensorflow python=3.5</div></pre></td></tr></table></figure></p>
-<h1 id="Update-Install"><a href="#Update-Install" class="headerlink" title="Update/Install"></a>Update/Install</h1><p>Update app packages:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">conda update --all</div></pre></td></tr></table></figure></p>
+<h1 id="Create-Delete-Environment"><a href="#Create-Delete-Environment" class="headerlink" title="Create/Delete Environment"></a>Create/Delete Environment</h1><p>Create an environment:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">conda create --name tensorflow python=3.6</div></pre></td></tr></table></figure></p>
+<p>Delete an environment:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">conda remove --name tensorflow --all</div></pre></td></tr></table></figure>
+<h1 id="Update-install"><a href="#Update-install" class="headerlink" title="Update/install"></a>Update/install</h1><p>Update app packages:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">conda update --all</div></pre></td></tr></table></figure></p>
 <p>Update one package:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install tensorflow --upgrade</div></pre></td></tr></table></figure></p>
 <p>Update Python to latest point version:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">conda update python</div></pre></td></tr></table></figure></p>
 <p>Update Python to later version:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">conda install python=3.6</div></pre></td></tr></table></figure></p>
 <p>Version of a package:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">(tensorflow)Jeffreys-MacBook-Pro:present jeff$ python</div><div class="line">Python 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:52:12) </div><div class="line">[GCC 4.2.1 Compatible Apple LLVM 4.2 (clang-425.0.28)] on darwin</div><div class="line">Type "help", "copyright", "credits" or "license" for more information.</div><div class="line"><span class="meta">&gt;</span>&gt;&gt; import tensorflow</div><div class="line"><span class="meta">&gt;</span>&gt;&gt; print(tensorflow.__version__)</div><div class="line">0.8.0</div><div class="line"><span class="meta">&gt;</span>&gt;&gt; </div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">(tensorflow)Jeffreys-MacBook-Pro:present jeff$ python</div><div class="line">Python 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:52:12)</div><div class="line">[GCC 4.2.1 Compatible Apple LLVM 4.2 (clang-425.0.28)] on darwin</div><div class="line">Type "help", "copyright", "credits" or "license" for more information.</div><div class="line"><span class="meta">&gt;</span>&gt;&gt; import tensorflow</div><div class="line"><span class="meta">&gt;</span>&gt;&gt; print(tensorflow.__version__)</div><div class="line">0.8.0</div><div class="line"><span class="meta">&gt;</span>&gt;&gt;</div></pre></td></tr></table></figure>
 <p>You might want to add a new environment to Jupyter notebook.  By default, Jupyter will use<br>what ever environment you have active when you launch Jupyter.  However, if you would like<br>to allow your new environment to be used in Jupyter execute the following:</p>
 <p>For Mac:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">source activate tensorflow</div><div class="line">pip install ipykernel</div><div class="line">python -m ipykernel install --user --name=tensorflow</div></pre></td></tr></table></figure>
 <p>For Windows:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">activate tensorflow</div><div class="line">pip install ipykernel</div><div class="line">python -m ipykernel install --user --name=tensorflow</div></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -145,7 +148,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="http://www.heatonresearch.com//content/python_care.html" data-id="cj5fprigr000yd0vkd914a5bn" class="article-share-link">
+      <a data-url="http://www.heatonresearch.com//content/python_care.html" data-id="cj5pff58y0023n8vkzxpnaj0c" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

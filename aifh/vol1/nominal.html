@@ -5,16 +5,16 @@
   
   <title>AIFH Volume 1, Chapter 2: Nominal Encoding Lab | Heaton Research</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Encoding Nominal (class) Values Number of classes:  Normalized High:  Normalized Low:    One of N Encoding   Equilateral Encoding">
+  <meta name="description" content="Encoding Nominal (class) Values Number of classes:  Normalized High:  Normalized Low:    One of N (One Hot) Encoding   Equilateral Encoding    For more information on this technique:   My blog post o">
 <meta property="og:type" content="website">
 <meta property="og:title" content="AIFH Volume 1, Chapter 2: Nominal Encoding Lab">
 <meta property="og:url" content="http://www.heatonresearch.com/aifh/vol1/nominal.html">
 <meta property="og:site_name" content="Heaton Research">
-<meta property="og:description" content="Encoding Nominal (class) Values Number of classes:  Normalized High:  Normalized Low:    One of N Encoding   Equilateral Encoding">
-<meta property="og:updated_time" content="2017-07-08T12:00:56.521Z">
+<meta property="og:description" content="Encoding Nominal (class) Values Number of classes:  Normalized High:  Normalized Low:    One of N (One Hot) Encoding   Equilateral Encoding    For more information on this technique:   My blog post o">
+<meta property="og:updated_time" content="2017-07-29T15:00:54.274Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AIFH Volume 1, Chapter 2: Nominal Encoding Lab">
-<meta name="twitter:description" content="Encoding Nominal (class) Values Number of classes:  Normalized High:  Normalized Low:    One of N Encoding   Equilateral Encoding">
+<meta name="twitter:description" content="Encoding Nominal (class) Values Number of classes:  Normalized High:  Normalized Low:    One of N (One Hot) Encoding   Equilateral Encoding    For more information on this technique:   My blog post o">
 <meta name="twitter:creator" content="@jeffheaton">
   
     <link rel="alternate" href="/atom.xml" title="Heaton Research" type="application/atom+xml">
@@ -122,15 +122,23 @@ ga('send', 'pageview');
 <h1>Encoding Nominal (class) Values</h1>
 Number of classes: <input type="text" id="classCount" value="5"><br>
 Normalized High: <input type="text" id="normalizedHigh" value="1"><br>
-Normalized Low: <input type="text" id="normalizedLow" value="-1"><br>
+Normalized Low: <input type="text" id="normalizedLow" value="0"><br>
 <input type="button" id="generateButton" value="Generate">
 
-<h2>One of N Encoding</h2>
+<h2>One of N (One Hot) Encoding</h2>
 <div id="oneofnOutput"></div>
 
 <h2>Equilateral Encoding</h2>
 <div id="equilateralOutput"></div>
 
+
+<br><br>For more information on this technique:
+
+<li> <a href="/2017/02/10/equilateral.html">My blog post on Equilateral Encoding</a>
+</li><li> Masters, T. (1993). Practical neural network recipes in C++. Morgan Kaufmann.
+</li><li> Guiver, J. P., &amp; Klimasauskas, C. C. (1991). Applying neural networks, Part IV: improving performance. <i>PC AI Magazine</i>, 5, 34-41.
+
+</li>
       
     </div>
 
@@ -140,7 +148,7 @@ Normalized Low: <input type="text" id="normalizedLow" value="-1"><br>
     
 
     <footer class="article-footer">
-      <a data-url="http://www.heatonresearch.com/aifh/vol1/nominal.html" data-id="cj5fprijy003cd0vkj9dwcknh" class="article-share-link">
+      <a data-url="http://www.heatonresearch.com/aifh/vol1/nominal.html" data-id="cj5pff5f2003en8vk48q9w3u2" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
