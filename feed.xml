@@ -74,11 +74,11 @@
     <link href="http://www.heatonresearch.com/2017/06/01/hidden-layers.html"/>
     <id>http://www.heatonresearch.com/2017/06/01/hidden-layers.html</id>
     <published>2017-06-01T17:00:00.000Z</published>
-    <updated>2017-07-28T22:27:02.938Z</updated>
+    <updated>2017-07-30T01:29:44.191Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;There are really two decisions that must be made regarding the hidden layers: how many hidden layers to actually have in the neural netwo
+      &lt;p&gt;This is a repost/update of previous content that discussed how to choose the number and structure of hidden layers for a neural network. 
     
     </summary>
     

@@ -5,16 +5,16 @@
   
   <title>The Number of Hidden Layers | Heaton Research</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="There are really two decisions that must be made regarding the hidden layers: how many hidden layers to actually have in the neural network and how many neurons will be in each of these layers. We wil">
+  <meta name="description" content="This is a repost/update of previous content that discussed how to choose the number and structure of hidden layers for a neural network.  I first wrote this material during the “pre-deep learning” era">
 <meta property="og:type" content="article">
 <meta property="og:title" content="The Number of Hidden Layers">
 <meta property="og:url" content="http://www.heatonresearch.com/2017/06/01/hidden-layers.html">
 <meta property="og:site_name" content="Heaton Research">
-<meta property="og:description" content="There are really two decisions that must be made regarding the hidden layers: how many hidden layers to actually have in the neural network and how many neurons will be in each of these layers. We wil">
-<meta property="og:updated_time" content="2017-07-28T22:27:02.938Z">
+<meta property="og:description" content="This is a repost/update of previous content that discussed how to choose the number and structure of hidden layers for a neural network.  I first wrote this material during the “pre-deep learning” era">
+<meta property="og:updated_time" content="2017-07-30T01:29:44.191Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="The Number of Hidden Layers">
-<meta name="twitter:description" content="There are really two decisions that must be made regarding the hidden layers: how many hidden layers to actually have in the neural network and how many neurons will be in each of these layers. We wil">
+<meta name="twitter:description" content="This is a repost/update of previous content that discussed how to choose the number and structure of hidden layers for a neural network.  I first wrote this material during the “pre-deep learning” era">
 <meta name="twitter:creator" content="@jeffheaton">
   
     <link rel="alternate" href="/atom.xml" title="Heaton Research" type="application/atom+xml">
@@ -146,8 +146,12 @@ ga('send', 'pageview');
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>There are really two decisions that must be made regarding the hidden layers: how many hidden layers to actually have in the neural network and how many neurons will be in each of these layers. We will first examine how to determine the number of hidden layers to use with the neural network.</p>
-<p>Problems that require two hidden layers are rarely encountered. However, neural networks with two hidden layers can represent functions with any kind of shape. There is currently no theoretical reason to use neural networks with any more than two hidden layers. In fact, for many practical problems, there is no reason to use any more than one hidden layer. Table 5.1 summarizes the capabilities of neural network architectures with various hidden layers.</p>
+        <p>This is a repost/update of previous content that discussed how to choose the number and structure of hidden layers for a neural network.  I first wrote this material during the “pre-deep learning” era of neural networks.  Deep neural networks have somewhat changed the more classical recommendations of having at most 2 layers and how to choose the number of hidden layers.  </p>
+<p>A single hidden layer neural networks is capable of [universal approximation]<a href="https://en.wikipedia.org/wiki/Universal_approximation_theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Universal_approximation_theorem</a>.  The universal approximation theorem states that a feed-forward network, with a single hidden layer, containing a finite number of neurons, can approximate continuous functions with mild assumptions on the activation function. The first version of this theorem was proposed by Cybenko (1989) for sigmoid activation functions.  Hornik (1991) expanded upon this by showing that it is not the specific choice of the activation function, but rather the multilayer feedforward architecture itself which allows neural networks the potential of being universal approximators.</p>
+<p>Due to this theorem you will see considerable literature that suggests the use of a single hidden layer.  This all changed with Hinton, Osindero, &amp; Teh (2006).  If a single hidden layer can learn any problem, why did Hinton et. al. invest so heavily in deep learning?  Why do we need deep learning at all?  While the universal approximation theorem states/proves that a single layer neural network <em>can</em> learn anything, it does not specify how easy it will be for that neural network to actually learn something. Every since the multilayer perceptron, we’ve had the ability to create deep neural networks.  We just were not particularly good at training them until Hinton’s groundbreaking research in 2006 and subsequent advances that built upon his seminal work.</p>
+<p>Traditionally, neural networks only had three types of layers: hidden, input and output. These are all really the same type of layer if you just consider that input layers are fed from external data (not a previous layer) and output feed data to an external destination (not the next layer).  These three layers are now commonly referred to as dense layers.  This is because every neuron in this layer is fully connected to the next layer.  In the case of the output layer the neurons are just holders, there are no forward connections. Modern neural networks have many additional layer types to deal with.  In addition to the classic dense layers, we now also have dropout, convolutional, pooling, and recurrent layers.  Dense layers are often intermixed with these other layer types.</p>
+<p>This article deals with dense laeyrs.  When considering the structure of dense layers, there are really two decisions that must be made regarding these hidden layers: how many hidden layers to actually have in the neural network and how many neurons will be in each of these layers. We will first examine how to determine the number of hidden layers to use with the neural network.</p>
+<p>Problems that require more than two hidden layers were rare prior to deep learning.  Two or fewer layers will often suffice with simple data sets.  However, with complex datasets involving time-series or computer vision, additional layers can be helpful.  The following table summarizes the capabilities of several common layer architectures.</p>
 <p><strong>Table: Determining the Number of Hidden Layers</strong></p>
 <table>
 <thead>
@@ -169,19 +173,28 @@ ga('send', 'pageview');
 <td>2</td>
 <td>Can represent an arbitrary decision boundary to arbitrary accuracy with rational activation functions and can approximate any smooth mapping to any accuracy.</td>
 </tr>
+<tr>
+<td>&gt;2</td>
+<td>Additional layers can learn complex representations (sort of automatic feature engineering) for layer layers.  </td>
+</tr>
 </tbody>
 </table>
 <p>Deciding the number of hidden neuron layers is only a small part of the problem. You must also determine how many neurons will be in each of these hidden layers. This process is covered in the next section.</p>
 <h2 id="The-Number-of-Neurons-in-the-Hidden-Layers"><a href="#The-Number-of-Neurons-in-the-Hidden-Layers" class="headerlink" title="The Number of Neurons in the Hidden Layers"></a>The Number of Neurons in the Hidden Layers</h2><p>Deciding the number of neurons in the hidden layers is a very important part of deciding your overall neural network architecture. Though these layers do not directly interact with the external environment, they have a tremendous influence on the final output. Both the number of hidden layers and the number of neurons in each of these hidden layers must be carefully considered.</p>
 <p>Using too few neurons in the hidden layers will result in something called underfitting. Underfitting occurs when there are too few neurons in the hidden layers to adequately detect the signals in a complicated data set.</p>
 <p>Using too many neurons in the hidden layers can result in several problems. First, too many neurons in the hidden layers may result in overfitting. Overfitting occurs when the neural network has so much information processing capacity that the limited amount of information contained in the training set is not enough to train all of the neurons in the hidden layers. A second problem can occur even when the training data is sufficient. An inordinately large number of neurons in the hidden layers can increase the time it takes to train the network. The amount of training time can increase to the point that it is impossible to adequately train the neural network. Obviously, some compromise must be reached between too many and too few neurons in the hidden layers.</p>
-<p>There are many rule-of-thumb methods for determining the correct number of neurons to use in the hidden layers, such as the following:</p>
+<p>I have a few rules of thumb that I use to choose hidden layers.  There are many rule-of-thumb methods for determining an acceptable number of neurons to use in the hidden layers, such as the following:</p>
 <ul>
 <li>The number of hidden neurons should be between the size of the input layer and the size of the output layer.</li>
 <li>The number of hidden neurons should be 2/3 the size of the input layer, plus the size of the output layer.</li>
 <li>The number of hidden neurons should be less than twice the size of the input layer.</li>
 </ul>
-<p>These three rules provide a starting point for you to consider. Ultimately, the selection of an architecture for your neural network will come down to trial and error. But what exactly is meant by trial and error? You do not want to start throwing random numbers of layers and neurons at your network. To do so would be very time consuming. </p>
+<p>These three rules provide a starting point for you to consider. Ultimately, the selection of an architecture for your neural network will come down to trial and error. But what exactly is meant by trial and error? You do not want to start throwing random numbers of layers and neurons at your network. To do so would be very time consuming.</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li>Cybenko, G. (1989) “Approximations by superpositions of sigmoidal functions”, <em>Mathematics of Control, Signals, and Systems</em>, 2 (4), 303-314</li>
+<li>Kurt Hornik (1991) “Approximation Capabilities of Multilayer Feedforward Networks”, <em>Neural Networks</em>, 4(2), 251–257. doi:10.1016/0893-6080(91)90009-T</li>
+<li>Hinton, G. E.; Osindero, S.; Teh, Y. W. (2006). “A Fast Learning Algorithm for Deep Belief Nets” (PDF). Neural Computation. 18 (7): 1527–1554.</li>
+</ul>
 
       
     </div>
@@ -192,7 +205,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="http://www.heatonresearch.com/2017/06/01/hidden-layers.html" data-id="cj5prqzwt0014rwvkjssu0xc4" class="article-share-link">
+      <a data-url="http://www.heatonresearch.com/2017/06/01/hidden-layers.html" data-id="cj5q1u8mt001aisvkb60rmye4" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
