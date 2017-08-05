@@ -3,18 +3,18 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  <title>Introduction to the Math of Neural Networks | Heaton Research</title>
+  <title>AIFH Volume 1, Chapter 6: Error Calculation | Heaton Research</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Chapter 1: Neural Network Calculation  Matrix Mathematics">
+  <meta name="description" content="MathJax.Hub.Config({   CommonHTML: { linebreaks: { automatic: true } },   &quot;HTML-CSS&quot;: { linebreaks: { automatic: true } },          SVG: { linebreaks: { automatic: true } } });   Error Calculation Be">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Introduction to the Math of Neural Networks">
-<meta property="og:url" content="http://www.heatonresearch.com/aifh/math/index.html">
+<meta property="og:title" content="AIFH Volume 1, Chapter 6: Error Calculation">
+<meta property="og:url" content="http://www.heatonresearch.com/aifh/vol1/error.html">
 <meta property="og:site_name" content="Heaton Research">
-<meta property="og:description" content="Chapter 1: Neural Network Calculation  Matrix Mathematics">
-<meta property="og:updated_time" content="2017-07-01T03:28:39.015Z">
+<meta property="og:description" content="MathJax.Hub.Config({   CommonHTML: { linebreaks: { automatic: true } },   &quot;HTML-CSS&quot;: { linebreaks: { automatic: true } },          SVG: { linebreaks: { automatic: true } } });   Error Calculation Be">
+<meta property="og:updated_time" content="2017-08-05T12:50:42.068Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Introduction to the Math of Neural Networks">
-<meta name="twitter:description" content="Chapter 1: Neural Network Calculation  Matrix Mathematics">
+<meta name="twitter:title" content="AIFH Volume 1, Chapter 6: Error Calculation">
+<meta name="twitter:description" content="MathJax.Hub.Config({   CommonHTML: { linebreaks: { automatic: true } },   &quot;HTML-CSS&quot;: { linebreaks: { automatic: true } },          SVG: { linebreaks: { automatic: true } } });   Error Calculation Be">
 <meta name="twitter:creator" content="@jeffheaton">
   
     <link rel="alternate" href="/atom.xml" title="Heaton Research" type="application/atom+xml">
@@ -31,6 +31,15 @@
   
   
 
+  
+    
+      
+    
+    
+      
+        <link rel="stylesheet" href="/aifh/vol1/distance.css">
+      
+    
   
 
   <link rel="stylesheet" href="/css/styles.css">
@@ -110,7 +119,7 @@ ga('send', 'pageview');
 
   <div class="container">
     <a href="/aifh/"><img src="/images/aifh/web_header.png" class="img-responsive center-block"></a>
-<h1>Introduction to the Math of Neural Networks</h1>
+<h1>AIFH Volume 1, Chapter 6: Error Calculation</h1>
 <article id="aifh-page-undefined" class="article article-type-aifh-page" itemscope itemprop="blogPost">
 
 
@@ -118,12 +127,30 @@ ga('send', 'pageview');
 
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>Chapter 1: Neural Network Calculation <ul>
-<li><a href="math.html">Matrix Mathematics</a></li>
-</ul>
-</li>
-</ul>
+        <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  CommonHTML: { linebreaks: { automatic: true } },
+  "HTML-CSS": { linebreaks: { automatic: true } },
+         SVG: { linebreaks: { automatic: true } }
+});
+</script>
+
+<h1>Error Calculation Between Two Vectors</h1>
+Dimensions: <input type="text" id="TextDimensionNum" value="4"><input type="button" value="OK" id="ButtonDimensionsOK">
+<input type="button" value="Example Values from Book" id="ButtonBookValues">
+
+<h2>Vector 1: Actual</h2>
+<div id="DivVector1"></div>
+
+<h2>Vector 2: Ideal/Expected</h2>
+<div id="DivVector2"></div>
+
+<h2>Error Calculation</h2>
+<input type="button" value="Calculate Distance" id="ButtonCalculate">
+
+<div id="DivOutput"></div><br><br>
+<p>Latex:</p>
+<pre id="PreOutput"></pre>
 
       
     </div>
@@ -134,7 +161,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="http://www.heatonresearch.com/aifh/math/index.html" data-id="cj5zfs8k4003a2svk715s8ih7" class="article-share-link">
+      <a data-url="http://www.heatonresearch.com/aifh/vol1/error.html" data-id="cj5zfs8k5003b2svk5qqtslcc" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -169,7 +196,7 @@ Jeff Heaton is a computer scientist, data scientist, and indie publisher. Heaton
 <script>
   var disqus_shortname = 'heatonresearch';
   
-  var disqus_url = 'http://www.heatonresearch.com/aifh/math/index.html';
+  var disqus_url = 'http://www.heatonresearch.com/aifh/vol1/error.html';
   
   (function(){
     var dsq = document.createElement('script');
@@ -187,6 +214,19 @@ Jeff Heaton is a computer scientist, data scientist, and indie publisher. Heaton
 
 
 
+
+  
+    
+  
+  
+    
+      <script src="/aifh/vol1/error.js"></script>
+    
+  
+    
+      <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+  
 
 
 

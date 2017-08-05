@@ -3,14 +3,21 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  <title>Archives: 2017/5 | Heaton Research</title>
+  <title>What are Tensors and why are they Flowing? (TensorFlow) | Heaton Research</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Heaton Research">
-<meta property="og:url" content="http://www.heatonresearch.com/archives/2017/05/index.html">
+  <meta name="description" content="The purpose of this post is to describe Tensors from a programming, or computer science, standpoint.  Therefore, I am treating tensors as collections of coordinates and ignoring some of the more gener">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What are Tensors and why are they Flowing? (TensorFlow)">
+<meta property="og:url" content="http://www.heatonresearch.com/2017/07/30/tensors.html">
 <meta property="og:site_name" content="Heaton Research">
+<meta property="og:description" content="The purpose of this post is to describe Tensors from a programming, or computer science, standpoint.  Therefore, I am treating tensors as collections of coordinates and ignoring some of the more gener">
+<meta property="og:image" content="http://www.heatonresearch.com/images/content/tensor_graph1.png">
+<meta property="og:image" content="http://www.heatonresearch.com/images/content/tensor_graph2.png">
+<meta property="og:updated_time" content="2017-08-05T12:11:34.639Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Heaton Research">
+<meta name="twitter:title" content="What are Tensors and why are they Flowing? (TensorFlow)">
+<meta name="twitter:description" content="The purpose of this post is to describe Tensors from a programming, or computer science, standpoint.  Therefore, I am treating tensors as collections of coordinates and ignoring some of the more gener">
+<meta name="twitter:image" content="http://www.heatonresearch.com/images/content/tensor_graph1.png">
 <meta name="twitter:creator" content="@jeffheaton">
   
     <link rel="alternate" href="/atom.xml" title="Heaton Research" type="application/atom+xml">
@@ -88,7 +95,7 @@ ga('send', 'pageview');
           <li><a class=""
                  href="/jeff_index/">Articles</a></li>
         
-          <li><a class="active"
+          <li><a class=""
                  href="/archives/">Archives</a></li>
         
       </ul>
@@ -112,41 +119,104 @@ ga('send', 'pageview');
 
 <div class="row">
     <div class="col-sm-8 blog-main">
-      
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <header class="archive-article-header">
+      <article id="post-tensors" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
     
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/25/ijcnn_2017.html">Presented at International Joint Conference on Neural Networks (IJCNN 2017)</a>
+    <h1 class="article-title" itemprop="name">
+      What are Tensors and why are they Flowing? (TensorFlow)
     </h1>
   
 
 
+  </header>
+
+  <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2017/05/25/ijcnn_2017.html" class="archive-article-date"><time datetime="2017-05-25T17:00:00.000Z" itemprop="datePublished">May 25th</time></a>
+  <a href="/2017/07/30/tensors.html" class="article-date"><time datetime="2017-07-30T17:00:00.000Z" itemprop="datePublished">2017-07-30</time></a>
 </div>
 
-  </header>
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ai/">ai</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>The purpose of this post is to describe Tensors from a programming, or computer science, standpoint.  Therefore, I am treating tensors as collections of coordinates and ignoring some of the more general scientific treatments of tensor, vectors and scalers.  As can be seen from the <a href="https://en.wikipedia.org/wiki/Vector" target="_blank" rel="external">Wikipedia page on vector</a>, there are quite a few related ways to view these concepts.    </p>
+<p>A Tensor can essentially be thought of as programming array or list. There are different ranks of vectors which correspond to the dimensions of an array.  For example:</p>
+<ul>
+<li>Tensor of Rank 0 (or scaler) corresponds to a non-array variable (i.e. a).</li>
+<li>Tensor of Rank 1 (or vector) corresponds to a single dimension array (i.e. a[1])</li>
+<li>Tensor of Rank 2 (or matrix) corresponds to a two dimension array (i.e. a[1,2])</li>
+<li>Tensor of Rank 3 (or cube) corresponds to a three dimension array (i.e. a[1,2,3])</li>
+<li>Tensor of Rank 4 (tesseract/hypercube) corresponds to a four dimension array (i.e. a[1,2,3,4])</li>
+<li>Higher ranks (hypercubes) corresponds to higher dimensional arrays</li>
+</ul>
+<p>Google TensorFlow allows compute graphs (essentially programming expressions) to be defined between variables of type Tensor.  Consider a simple expression such as:</p>
+<p>$$c = a + b$$</p>
+<p>Consider values a and b to be tensors.  This means they might be simple scalers, in which case the above expression might be:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">c = 1 + 3 = 4</div></pre></td></tr></table></figure>
+<p>The values a and b might also be vectors. In which case the expression might be:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">c = [1, 2] + [3, 4] = [4, 6]</div></pre></td></tr></table></figure>
+<p>The values a and b might also be matrixes.  In which case the expression might be:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">c = [[1, 2],[3,4]] + [[5, 6],[7,8]] = [[6,8],[10,12]]</div></pre></td></tr></table></figure></p>
+<p>TensorFlow allows these expressions to be represented as compute graphs.  Tensors flow from operator to operator of a compute graph as the final output is calculated.  As a compute graph, the above operation would appear as:</p>
+<p><img src="/images/content/tensor_graph1.png" alt="Simple Graph"></p>
+<p>Graphs can become much more complex.  The following graph shows how a feedforward neural network might be calculated.</p>
+<p><img src="/images/content/tensor_graph2.png" alt="Complex Graph"></p>
+<p>Tensors flow from the inputs (i1) to the output (o1).  Some tensors remain in the graph as weights and biases and are updated when the neural network is trained.</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://www.heatonresearch.com/2017/07/30/tensors.html" data-id="cj5zfs8j2002o2svktcrg8fni" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://www.heatonresearch.com/2017/07/30/tensors.html#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+      
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2017/07/22/keras-getting-started.html" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Overview of Keras/TensorFlow Basic Operations</span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
+  
 </article>
 
-  
-  
-    </div></section>
-  
 
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 
 
     </div>
@@ -234,11 +304,13 @@ Jeff Heaton is a computer scientist, data scientist, and indie publisher. Heaton
 <script>
   var disqus_shortname = 'heatonresearch';
   
+  var disqus_url = 'http://www.heatonresearch.com/2017/07/30/tensors.html';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
@@ -254,7 +326,24 @@ Jeff Heaton is a computer scientist, data scientist, and indie publisher. Heaton
 
 
 
-<script src="/js/script.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/script.js"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 </body>
 </html>

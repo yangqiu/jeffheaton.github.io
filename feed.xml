@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="http://www.heatonresearch.com/"/>
-  <updated>2017-07-22T18:59:36.982Z</updated>
+  <updated>2017-08-05T12:11:34.639Z</updated>
   <id>http://www.heatonresearch.com/</id>
   
   <author>
@@ -14,6 +14,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>What are Tensors and why are they Flowing? (TensorFlow)</title>
+    <link href="http://www.heatonresearch.com/2017/07/30/tensors.html"/>
+    <id>http://www.heatonresearch.com/2017/07/30/tensors.html</id>
+    <published>2017-07-30T17:00:00.000Z</published>
+    <updated>2017-08-05T12:11:34.639Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;The purpose of this post is to describe Tensors from a programming, or computer science, standpoint.  Therefore, I am treating tensors as
+    
+    </summary>
+    
+      <category term="ai" scheme="http://www.heatonresearch.com/categories/ai/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Overview of Keras/TensorFlow Basic Operations</title>
@@ -356,24 +374,6 @@
     </summary>
     
       <category term="datascience" scheme="http://www.heatonresearch.com/categories/datascience/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>First time at the NSU Campus - Fall 2014</title>
-    <link href="http://www.heatonresearch.com/2014/09/02/first-visit-nsu.html"/>
-    <id>http://www.heatonresearch.com/2014/09/02/first-visit-nsu.html</id>
-    <published>2014-09-02T18:26:00.000Z</published>
-    <updated>2017-07-01T03:28:38.973Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;I just returned from my first cluster meeting for PhD program in computer science at Nova&lt;br&gt;Southeastern University.  Because it was Lab
-    
-    </summary>
-    
-      <category term="phd" scheme="http://www.heatonresearch.com/categories/phd/"/>
     
     
   </entry>
