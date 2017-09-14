@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://www.heatonresearch.com/content/python_care.html">
 <meta property="og:site_name" content="Heaton Research">
 <meta property="og:description" content="EnvironmentsList your environments:1conda env list Select an environment (Linux, OS X):1source activate tensorflow Select an environment (Windows):1activate tensorflow Deactivate Environment (Linux, O">
-<meta property="og:updated_time" content="2017-07-26T22:42:13.595Z">
+<meta property="og:updated_time" content="2017-09-14T05:17:46.162Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Care and Feeding of a Python Environment">
 <meta name="twitter:description" content="EnvironmentsList your environments:1conda env list Select an environment (Linux, OS X):1source activate tensorflow Select an environment (Windows):1activate tensorflow Deactivate Environment (Linux, O">
@@ -138,6 +138,12 @@ ga('send', 'pageview');
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">source activate tensorflow</div><div class="line">pip install ipykernel</div><div class="line">python -m ipykernel install --user --name=tensorflow</div></pre></td></tr></table></figure>
 <p>For Windows:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">activate tensorflow</div><div class="line">pip install ipykernel</div><div class="line">python -m ipykernel install --user --name=tensorflow</div></pre></td></tr></table></figure>
+<h1 id="Jupyter-Notebooks"><a href="#Jupyter-Notebooks" class="headerlink" title="Jupyter Notebooks"></a>Jupyter Notebooks</h1><p>It can be really handy to use Jupyter notebook to manage your different Python environments.  To do this you must install Jupyter in your root Python environment (and each additional environment):</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">conda install jupyter</div></pre></td></tr></table></figure>
+<p>You must also install nb_conda in your root:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">conda install nb_conda</div></pre></td></tr></table></figure>
+<p>You can also add support for R in Jupyter:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">conda install -c r r-essentials</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -148,7 +154,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="http://www.heatonresearch.com//content/python_care.html" data-id="cj5zgoksx001xfsvkguojljmu" class="article-share-link">
+      <a data-url="http://www.heatonresearch.com//content/python_care.html" data-id="cj7k0kx1w001rmsvkn7688yp9" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

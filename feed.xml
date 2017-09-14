@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="http://www.heatonresearch.com/"/>
-  <updated>2017-08-05T12:11:34.639Z</updated>
+  <updated>2017-09-14T05:27:52.689Z</updated>
   <id>http://www.heatonresearch.com/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Installing TensorFlow</title>
+    <link href="http://www.heatonresearch.com/2017/09/14/install_tf.html"/>
+    <id>http://www.heatonresearch.com/2017/09/14/install_tf.html</id>
+    <published>2017-09-14T17:00:00.000Z</published>
+    <updated>2017-09-14T05:27:52.689Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Session-22-TensorFlow-workshop&quot;&gt;&lt;a href=&quot;#Session-22-TensorFlow-workshop&quot; class=&quot;headerlink&quot; title=&quot;Session 22: TensorFlow (workshop
+    
+    </summary>
+    
+      <category term="datascience" scheme="http://www.heatonresearch.com/categories/datascience/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Data Science Rosetta Stone: Classification in Python, R, MATLAB, SAS, &amp; Julia</title>
+    <link href="http://www.heatonresearch.com/2017/08/17/ds_rosetta_stone.html"/>
+    <id>http://www.heatonresearch.com/2017/08/17/ds_rosetta_stone.html</id>
+    <published>2017-08-17T18:26:00.000Z</published>
+    <updated>2017-09-14T05:17:46.128Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;The discovery of the &lt;a href=&quot;https://en.wikipedia.org/wiki/Rosetta_Stone&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Rosetta Stone&lt;/a&gt; in 1799 allow
+    
+    </summary>
+    
+      <category term="datascience" scheme="http://www.heatonresearch.com/categories/datascience/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>What are Tensors and why are they Flowing? (TensorFlow)</title>
@@ -334,42 +370,6 @@
     <summary type="html">
     
       &lt;p&gt;Drew Conway describes data scientist as the combination of domain expertise, statistics&lt;br&gt;and hacker skills.  If you are an IT programme
-    
-    </summary>
-    
-      <category term="datascience" scheme="http://www.heatonresearch.com/categories/datascience/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>PhD Update: Second Cluster Visit for Winter 2015 Semester at NSU</title>
-    <link href="http://www.heatonresearch.com/2015/03/09/phd-2nd-cluster-visit.html"/>
-    <id>http://www.heatonresearch.com/2015/03/09/phd-2nd-cluster-visit.html</id>
-    <published>2015-03-09T18:26:00.000Z</published>
-    <updated>2017-07-01T03:28:38.975Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;I just got back to St. Louis from my second cluster visit to NSU for the phd in computer&lt;br&gt;science.  I was feeling pretty good about cho
-    
-    </summary>
-    
-      <category term="phd" scheme="http://www.heatonresearch.com/categories/phd/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Quick and Very Dirty Data Wrangling Example</title>
-    <link href="http://www.heatonresearch.com/2014/12/27/quick-dirty-data-wrangling.html"/>
-    <id>http://www.heatonresearch.com/2014/12/27/quick-dirty-data-wrangling.html</id>
-    <published>2014-12-27T19:26:00.000Z</published>
-    <updated>2017-07-01T14:38:53.150Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Data science is often described as the intersection of statistics, domain knowledge and&lt;br&gt;hacking skills.  One important part of hacking
     
     </summary>
     

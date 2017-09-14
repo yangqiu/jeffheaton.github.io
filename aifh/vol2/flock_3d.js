@@ -175,7 +175,7 @@ function kNearest(a1, lst, k, maxDist) {
 
 function moveAgents() {
 	'use strict';
-	
+
 	var targetAngle = [];
 	var separation = [];
 	var alignment = [];
@@ -199,13 +199,13 @@ function moveAgents() {
 			var dx = meanX - agents[i].position[0];
 			var dy = meanY - agents[i].position[1];
 			var dz = meanZ - agents[i].position[2];
-			
+
 			var rotx = Math.atan2( dy, dz )
 			var roty = Math.atan2( dx * Math.cos(rotx), dz )
-			
+
 			separation[0] = rotx - agents[i].heading[0];
 			separation[0] += Math.PI;
-			
+
 			separation[1] = roty - agents[i].heading[1];
 			separation[1] += Math.PI;
 		}
@@ -228,12 +228,12 @@ function moveAgents() {
 			var dx = meanX - agents[i].position[0];
 			var dy = meanY - agents[i].position[1];
 			var dz = meanZ - agents[i].position[2];
-			
-			
+
+
 			var rotx = Math.atan2( dy, dz )
 			var roty = Math.atan2( dx * Math.cos(rotx), dz )
 			//rotz = Math.atan2( Math.cos(rotx), Math.sin(rotx) * Math.sin(roty) )
-			
+
 			cohesion[0] = rotx - agents[i].heading[0];
 			cohesion[1] = roty - agents[i].heading[1];
 		}
@@ -241,16 +241,16 @@ function moveAgents() {
 		// perform the turn
 		// The degree to which each of the three laws is applied is configurable.
 		// The three default ratios that I provide work well.
-		
+
 		for(var j=0;j<2;j++) {
 			turnAmount[j] = (cohesion[j] * controls.cohesion) + (alignment[j] * controls.alignment) + (separation[j] * controls.separation);
-			
+
 			if( turnAmount[j]<-constMaxTurn ) {
 				turnAmount[j] = -constMaxTurn;
 			} else if( turnAmount[j]>constMaxTurn ) {
 				turnAmount[j] = constMaxTurn;
 			}
-		
+
 			agents[i].heading[j] += turnAmount[j];
 		}
 
@@ -265,16 +265,16 @@ function updateBOID(boid) {
 	// adjust position
 	var yaw = boid.heading[0];
 	var pitch = boid.heading[1];
-	
+
 	var dx = constSpeed * Math.cos(yaw) * Math.cos(pitch);
 	var dy = constSpeed * Math.sin(yaw) * Math.cos(pitch);
 	var dz = constSpeed * Math.sin(pitch);
-	
+
     boid.position[0] += (dx * constSpeed);
     boid.position[1] += (dy * constSpeed);
     boid.position[2] += (dz * constSpeed);
-    
-    
+
+
     if(controls.boundaries=='Wrap') {
     	// handle wrap
     	for(var i=0;i<boid.position.length;i++) {
@@ -301,8 +301,8 @@ function updateBOID(boid) {
 	boid.mesh.position.x = boid.position[0];
 	boid.mesh.position.y = boid.position[1];
 	boid.mesh.position.z = boid.position[2];
-		
-	boid.mesh.rotation.x = pitch; 
+
+	boid.mesh.rotation.x = pitch;
 	boid.mesh.rotation.z = yaw-(Math.PI/2);
 }
 
@@ -315,18 +315,18 @@ function createBoids() {
     agents = [];
     for (var i = 0; i < controls.boidCount; i++) {
     	var boid = {
-    		position : [ 
-    			Math.floor(Math.random() * constWorldMax*2)-constWorldMax, 
+    		position : [
+    			Math.floor(Math.random() * constWorldMax*2)-constWorldMax,
     			Math.floor(Math.random() * constWorldMax*2)-constWorldMax,
     			Math.floor(Math.random() * constWorldMax*2)-constWorldMax],
-    			
+
             heading : [ 2 * Math.PI * Math.random(), 2 * Math.PI * Math.random() ],
             boid : null
             };
-            
+
         var mesh = new THREE.Mesh(new THREE.CylinderGeometry(0, 0.5, 2, 8, 1, false), new THREE.MeshNormalMaterial());
     	mesh.rotation.order  = "ZXY";
-    	
+
     	mesh.overdraw = true;
 		boid.mesh = mesh;
 		updateBOID(boid);
@@ -338,31 +338,31 @@ function createBoids() {
 
 function createScene() {
 	createBoids();
-    
+
     var geom = new THREE.Geometry();
     geom.vertices.push(new THREE.Vector3(-constWorldMax,-constWorldMax,-constWorldMax));
     geom.vertices.push(new THREE.Vector3(-constWorldMax,constWorldMax,-constWorldMax));
     geom.vertices.push(new THREE.Vector3(constWorldMax,constWorldMax,-constWorldMax));
     geom.vertices.push(new THREE.Vector3(constWorldMax,-constWorldMax,-constWorldMax));
     geom.vertices.push(new THREE.Vector3(-constWorldMax,-constWorldMax,-constWorldMax));
-    
+
     geom.vertices.push(new THREE.Vector3(-constWorldMax,-constWorldMax,constWorldMax));
     geom.vertices.push(new THREE.Vector3(constWorldMax,-constWorldMax,constWorldMax));
-    geom.vertices.push(new THREE.Vector3(constWorldMax,-constWorldMax,-constWorldMax));	
-    
+    geom.vertices.push(new THREE.Vector3(constWorldMax,-constWorldMax,-constWorldMax));
+
     geom.vertices.push(new THREE.Vector3(constWorldMax,constWorldMax,-constWorldMax));
     geom.vertices.push(new THREE.Vector3(constWorldMax,constWorldMax,constWorldMax));
     geom.vertices.push(new THREE.Vector3(-constWorldMax,constWorldMax,constWorldMax));
     geom.vertices.push(new THREE.Vector3(-constWorldMax,constWorldMax,-constWorldMax));
-    geom.vertices.push(new THREE.Vector3(-constWorldMax,constWorldMax,constWorldMax));	
-    
+    geom.vertices.push(new THREE.Vector3(-constWorldMax,constWorldMax,constWorldMax));
+
     geom.vertices.push(new THREE.Vector3(-constWorldMax,-constWorldMax,constWorldMax));
     geom.vertices.push(new THREE.Vector3(constWorldMax,-constWorldMax,constWorldMax));
     geom.vertices.push(new THREE.Vector3(constWorldMax,constWorldMax,constWorldMax));
-    			
+
 	geom.computeFaceNormals();
 	geom.computeVertexNormals();
-	
+
 	// material
 	var mat = new THREE.LineBasicMaterial({color: 0xff0000});
 	var mesh = new THREE.Line(geom, mat, THREE.LineStrip);
@@ -382,26 +382,26 @@ function animate() {
 
 function render() {
     var delta = clock.getDelta();
-    
+
 	for(var i=0;i<agents.length;i++) {
     	updateBOID(agents[i]);
     }
     moveAgents();
 
-    
+
     // move camera, if requested
 	if( controls.view == 'Boid' ) {
 		camera.position.x = agents[0].position[0];
 		camera.position.y = agents[0].position[1];
 		camera.position.z = agents[0].position[2];
-		
+
 		var yaw = agents[0].heading[0];
 		var pitch = agents[0].heading[1];
-	
+
 		var dx = constSpeed * Math.cos(yaw) * Math.cos(pitch);
 		var dy = constSpeed * Math.sin(yaw) * Math.cos(pitch);
 		var dz = constSpeed * Math.sin(pitch);
-	
+
 		camera.lookAt(new THREE.Vector3(
     		agents[0].position[0] + dx*3,
     		agents[0].position[1] + dy*3,
@@ -410,13 +410,13 @@ function render() {
 		cameraControls.update(delta);
 	}
 
-    
+
     renderer.render(scene, camera);
 }
 
 
 function init() {
-    canvasWidth = window.innerWidth-500;
+    canvasWidth = 800;
     canvasHeight = 500;//window.innerHeight;
     var canvasRatio = 1;// canvasWidth / canvasHeight;
 
@@ -433,7 +433,7 @@ function init() {
     camera.lookAt(new THREE.Vector3(0, 0, 0));
 
     cameraControls = new THREE.OrbitControls(camera, renderer.domElement);
-    
+
     var gui = new dat.GUI();
     gui.add(controls, 'cohesion', 0.0, 1.0).step(0.01);
     gui.add(controls, 'alignment', 0.0, 1.0).step(0.01);
